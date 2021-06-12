@@ -4,15 +4,15 @@ export const Container = styled.div`
   position: fixed;
   top: calc(100% - 53px);
   width: 100%;
-  height: 52px;
+  height: 53px;
 
   display: flex;
   align-items: center;
   justify-content: space-around;
   z-index: 1;
 
-  background: ${(props) => props.theme.colors.background};
-  border-top: 1px solid ${(props) => props.theme.colors.border};
+  background: #000;
+  border-top: 1px solid #333;
 
   @media (min-width: 451px) {
     display: none;
@@ -33,7 +33,7 @@ export const NavButton = styled.button`
     margin: 0;
     padding: 0;
     font-size: 25px;
-    color: ${(props) => props.theme.colors.icon};
+    color: #ff7b00;
     opacity: 0.4;
 
     transition: 0.2s opacity;

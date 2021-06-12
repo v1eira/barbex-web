@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FaEnvelope, FaKey } from 'react-icons/fa';
 
 import barbexLogo from '../../assets/logo.png';
@@ -13,6 +13,7 @@ import {
 } from './styles';
 
 export default function SignIn() {
+  const history = useHistory();
 
   return (
     <Container>
@@ -28,7 +29,9 @@ export default function SignIn() {
         </InputField>
         <SubmitButton
           type="submit"
-          onClick={() => {}}
+          onClick={() => {
+            history.push('/home');
+          }}
         >
           <span>Entrar</span>
         </SubmitButton>

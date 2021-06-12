@@ -2,32 +2,16 @@ import styled from 'styled-components';
 import { lighten } from 'polished';
 
 export const Container = styled.div`
-  position: fixed;
-  width: calc(100% - 40px);
-  height: 27px;
-  padding: 20px;
+  width: ${(props) => (props.showSideBar ? '16%' : '0px')};
+  min-width: ${(props) => (props.showSideBar ? '200px' : 'none')};
+  height: 100%;
+  padding: 0 10px;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  z-index: 1;
 
-  background: ${(props) => props.theme.colors.background};
-  border-bottom: 1px solid ${(props) => props.theme.colors.border};
-
-  a {
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: bold;
-    color: ${(props) => props.theme.colors.headerButton};
-    opacity: 0.6;
-
-    transition: 0.2s opacity;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
+  background: #000;
 
   @media (max-width: 450px) {
     display: none;
@@ -35,31 +19,42 @@ export const Container = styled.div`
 `;
 
 export const NavigationButtons = styled.div`
+  margin-top: 80px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-right: 100px;
+  width: 100%;
+
+  img {
+    width: 130px;
+    margin-bottom: 30px;
+  }
 
   button + button {
-    margin-left: 10px;
+    margin-top: 10px;
   }
 `;
 
 export const NavButton = styled.button`
-  width: 60px;
-  height: 60px;
+  width: 100%;
+  height: 50px;
   border: 0;
-  border-radius: 30px;
   background: transparent;
   cursor: pointer;
   outline: none;
+  padding: 5px;
+  align-items: center;
+  
+  display: flex;
 
   transition: 0.2s background;
 
   svg {
     margin: 0;
+    margin-left: 25px;
     padding: 0;
-    font-size: 30px;
-    color: ${(props) => props.theme.colors.headerButton};
+    font-size: 20px;
+    color: #ff7b00;
     opacity: 0.5;
 
     transition: 0.2s opacity;
@@ -70,13 +65,22 @@ export const NavButton = styled.button`
   }
 
   &:hover {
-    background: ${(props) =>
-      lighten(0.05, props.theme.colors.headerButtonHover)};
-
-    svg {
+    span, svg {
       opacity: 1;
     }
   }
+`;
+
+export const ButtonLabel = styled.span`
+  font-size: 14px;
+  color: #fff;
+  margin-left: 15px;
+
+  .focused {
+    opacity: 1;
+  }
+
+  opacity: 0.5;
 `;
 
 export const Badge = styled(NavButton)`
@@ -95,17 +99,5 @@ export const Badge = styled(NavButton)`
     padding: 4px 0;
     color: #fff;
     border-radius: 50%;
-  }
-`;
-
-export const LogoutButton = styled(NavButton)`
-  svg {
-    transition: 0.2s color;
-  }
-  &:hover {
-    background: transparent;
-    svg {
-      opacity: 1;
-    }
   }
 `;
