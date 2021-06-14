@@ -83,6 +83,7 @@ export const ButtonLabel = styled.span`
 
 export const BarbershopSpecs = styled.div`
   display: ${(props) => (props.hasBarbershop ? 'flex' : 'none')};
+  flex-direction: column;
   height: 100%;
   margin: 0 25px;
 `;
@@ -136,3 +137,18 @@ export const BarbershopButtons = styled.div`
     }
   }
 `;
+
+export const BarbershopAddress = styled.span``;
+
+export const Sections = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+export const SectionList = styled.div``;
+
+export const Title = styled.span`
+  color: #fff;
+  font-size: 16px;
+`;
+
+export const List = styled.table``;

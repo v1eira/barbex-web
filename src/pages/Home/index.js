@@ -10,7 +10,12 @@ import {
   BarbershopSpecs,
   BarbershopHeader,
   BarbershopTitle,
-  BarbershopButtons } from './styles';
+  BarbershopButtons,
+  BarbershopAddress,
+  Sections,
+  SectionList,
+  Title,
+  List } from './styles';
 
 function Home() {
   const [hasBarbershop, setHasBarbershop] = useState(true);
@@ -38,6 +43,23 @@ function Home() {
             </ActionButton>
           </BarbershopButtons>
         </BarbershopHeader>
+
+        <BarbershopAddress>Avenida X, 1234</BarbershopAddress>
+
+        <Sections>
+          <SectionList>
+            <Title>Barbeiros</Title>
+
+            <List></List>
+          </SectionList>
+
+          <SectionList>
+            <Title>Serviços</Title>
+
+            <List></List>
+          </SectionList>
+        </Sections>
+        
       </BarbershopSpecs>
     </Container>
   );
