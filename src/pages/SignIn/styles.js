@@ -71,7 +71,7 @@ export const SubmitButton = styled.button`
   outline: none;
 
   background: #ff7b00;
-  border: 1px solid #16161c;
+  border: none;
   border-radius: 22px;
 
   transition: background 0.2s;

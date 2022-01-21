@@ -12,6 +12,10 @@ export const Container = styled.div`
   align-items: center;
 
   background: #000;
+  
+  img {
+    margin-top: 50px;
+  }
 
   @media (max-width: 450px) {
     display: none;
@@ -19,19 +23,14 @@ export const Container = styled.div`
 `;
 
 export const NavigationButtons = styled.div`
-  margin-top: 80px;
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
 
   img {
     width: 130px;
     margin-bottom: 30px;
-  }
-
-  button + button {
-    margin-top: 10px;
   }
 `;
 
@@ -51,7 +50,6 @@ export const NavButton = styled.button`
 
   svg {
     margin: 0;
-    margin-left: 25px;
     padding: 0;
     font-size: 20px;
     color: #ff7b00;

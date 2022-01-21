@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaEnvelope, FaKey, FaAt, FaUser } from 'react-icons/fa';
+import { FaEnvelope, FaLock, FaAt, FaUser } from 'react-icons/fa';
 
 import barbexLogo from '../../assets/logo.png';
 
@@ -23,19 +23,15 @@ export default function SignUp() {
           <input type="text" name="name" placeholder="Seu nome" />
         </InputField>
         <InputField>
-          <FaAt size={20} color={"#4d4d4d"} />
-          <input type="text" name="username" placeholder="Nome de usuário" />
-        </InputField>
-        <InputField>
           <FaEnvelope size={20} color={"#4d4d4d"} />
           <input type="email" name="email" placeholder="email@email.com" />
         </InputField>
         <InputField>
-          <FaKey size={20} color={"#4d4d4d"} />
+          <FaLock size={20} color={"#4d4d4d"} />
           <input type="password" name="password" placeholder="Senha" />
         </InputField>
         <InputField>
-          <FaKey size={20} color={"#4d4d4d"} />
+          <FaLock size={20} color={"#4d4d4d"} />
           <input
             type="password"
             name="password"

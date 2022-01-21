@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 import { FaPlusCircle } from 'react-icons/fa';
+import AddBarberModal from '../../components/AddBarberModal';
+import AddServiceModal from '../../components/AddServiceModal';
 
 import {
   Container,
@@ -20,6 +22,12 @@ import {
 function Home() {
   const [hasBarbershop, setHasBarbershop] = useState(true);
 
+  function openModal(e, id) {
+    e.preventDefault();
+    document.getElementById(id).style.display = 'block';
+    e.stopPropagation();
+  }
+
   return (
     <Container>
       <NewBarbershopButton hasBarbershop={hasBarbershop}>
@@ -32,14 +40,16 @@ function Home() {
           <BarbershopTitle>Barbearia XYZ</BarbershopTitle>
 
           <BarbershopButtons>
-            <ActionButton>
+            <ActionButton onClick={(e) => openModal(e, 'barber')}>
               <FaPlusCircle />
               <ButtonLabel>Adicionar Barbeiro</ButtonLabel>
+              <AddBarberModal name="Barbeiro" id="barber" />
             </ActionButton>
 
-            <ActionButton>
+            <ActionButton onClick={(e) => openModal(e, 'service')}>
               <FaPlusCircle />
               <ButtonLabel>Adicionar Serviço</ButtonLabel>
+              <AddServiceModal name="Serviço" id="service" />
             </ActionButton>
           </BarbershopButtons>
         </BarbershopHeader>

@@ -7,6 +7,7 @@ import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 import Home from '../pages/Home';
 import Profile from '../pages/Profile';
+import Schedule from '../pages/Schedule';
 
 export default function Routes({ toggleTheme }) {
   return (
@@ -16,6 +17,7 @@ export default function Routes({ toggleTheme }) {
       
       <Route path="/home" component={Home} />
       <Route path="/perfil" component={Profile} />
+      <Route path="/agenda" component={Schedule} />
     </Switch>
   );
 }

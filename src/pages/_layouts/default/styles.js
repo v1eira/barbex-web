@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   position: absolute;
   z-index: 1;
 
-  background: #000;
+  background: #202028;
 
   box-sizing: border-box !important;
   

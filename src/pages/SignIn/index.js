@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FaEnvelope, FaKey } from 'react-icons/fa';
+import { FaEnvelope, FaLock } from 'react-icons/fa';
 
 import barbexLogo from '../../assets/logo.png';
 
@@ -14,6 +14,7 @@ import {
 
 export default function SignIn() {
   const history = useHistory();
+  const [userType, setuserType] = useState('owner');
 
   return (
     <Container>
@@ -24,14 +25,12 @@ export default function SignIn() {
           <input type="email" name="email" placeholder="email@email.com" />
         </InputField>
         <InputField>
-          <FaKey size={20} color={"#4d4d4d"} />
+          <FaLock size={20} color={"#4d4d4d"} />
           <input type="password" name="password" placeholder="******" />
         </InputField>
         <SubmitButton
           type="submit"
-          onClick={() => {
-            history.push('/home');
-          }}
+          onClick={() => { userType === 'owner' ? history.push('/home') : history.push('/agenda'); }}
         >
           <span>Entrar</span>
         </SubmitButton>
